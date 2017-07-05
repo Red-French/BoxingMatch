@@ -15,6 +15,8 @@ public class Punches {
 	int uppercut = -5;
 	int bestPunch = -7;  // TODO: determine if a fighter threw his best punch
 	
+	int punches[] = new int[7];
+	
 	public void throwPunches() throws InterruptedException {
 		
 		for(int i = 0; i < 5; i++) {
