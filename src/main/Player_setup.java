@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Player_setup {
 
-	int i;
 	public ArrayList<Fighter> getDuksters() {
 		return duksters;
 	}
@@ -21,7 +20,7 @@ public class Player_setup {
 	public void questions() {
 		
 	    // question the player
-	    for(i = 0; i < 2; i++) {
+	    for(int i = 0; i < 2; i++) {
 	
 	      @SuppressWarnings("resource")
 	      Scanner scanner = new Scanner(System.in);
@@ -40,16 +39,12 @@ public class Player_setup {
 	      
 //	      duksters.add(competitor);
 	      setDuksters(competitor);
-	
-	      if(i == 1) {
-	    	  announcer();
-	      }
 
 	    }
 	}
     
     
-    public static void announcer() {
+    public void announcer() {
 //    	String stngHolder = "weighing in at " + competitor.getWeight() + " with his best punch being the " + competitor.getBestPunch() + "... " + competitor.getName() + "!!!";
 //        if(i == 0) {
 //          System.out.print("\nIn this corner, " + stngHolder);

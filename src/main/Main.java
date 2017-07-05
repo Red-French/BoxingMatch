@@ -12,6 +12,7 @@ public class Main {
     System.out.println("\nLET'S GET READY TO RUMMMMBUUUUULLE!");
 
     setup.questions();
+    setup.announcer();
     round.newRound();
 
 
