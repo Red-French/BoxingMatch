@@ -15,7 +15,6 @@ public class Main {
     setup.announcer();
     round.newRound();
 
-
   //  String[] fighters = {name, punch};
 
   //  Stream.of(competitors.getBoxers())
@@ -24,3 +23,5 @@ public class Main {
   }
 
 }
+
+// TODO: separate thread for crowd
