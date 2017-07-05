@@ -43,8 +43,8 @@ public class Player_setup {
 	}
     
     
-    public void announcer() {
-
+    public void announcer() {  // TODO: create Announcer class for this method
+    						   // TODO: write method for end of fight announcement
     	for(Fighter duksters : duksters) {
         	  System.out.print("\nWeighing in at " + duksters.getWeight()  + " with his best punch being the " + duksters.getBestPunch() + "... " + duksters.getName() + "!!!\n\n");
           }
