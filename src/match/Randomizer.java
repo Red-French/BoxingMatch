@@ -3,11 +3,16 @@ package match;
 import java.util.Random;
 
 public class Randomizer {
+	Random randomGenerator = new Random();
 	
 	public int boxer() {
-		Random randomGenerator = new Random();
-    		int randomInt;
-			return randomInt = randomGenerator.nextInt(2);
+    	int randomInt;
+		return randomInt = randomGenerator.nextInt(2);
+	}
+	
+	public int punch() {
+		int randomInt;
+		return randomInt = randomGenerator.nextInt(6);
 	}
 
 }
