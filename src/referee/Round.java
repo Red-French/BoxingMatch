@@ -29,6 +29,8 @@ public class Round extends Punches {
     	if (this.round < 4) {
     		// TODO: add countdown to next round beginning
     		timer.schedule(new BeginRound(), 3000);
+    	} else {
+    		timer.cancel();
     	}
     }
     
