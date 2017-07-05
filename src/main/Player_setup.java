@@ -37,7 +37,6 @@ public class Player_setup {
 	      // create new fighter
 	      Fighter competitor = new Fighter(name, weight, punch);
 	      
-//	      duksters.add(competitor);
 	      setDuksters(competitor);
 
 	    }
@@ -45,24 +44,17 @@ public class Player_setup {
     
     
     public void announcer() {
-//    	String stngHolder = "weighing in at " + competitor.getWeight() + " with his best punch being the " + competitor.getBestPunch() + "... " + competitor.getName() + "!!!";
-//        if(i == 0) {
-//          System.out.print("\nIn this corner, " + stngHolder);
-//        } else {
-//          System.out.print("\nIn the opposite corner, " + stngHolder);
-          for(Fighter duksters : duksters) {
+
+    	for(Fighter duksters : duksters) {
         	  System.out.print("\nWeighing in at " + duksters.getWeight()  + " with his best punch being the " + duksters.getBestPunch() + "... " + duksters.getName() + "!!!\n\n");
           }
           
           System.out.println("\n~ TONIGHT'S FIGHT TICKET ~\n");
-          
           for(Fighter duksters : duksters) {
 	    	  System.out.println("FIGHTER: " + duksters.getName());
 	    	  System.out.println("WEIGHT: " + duksters.getWeight());
 	    	  System.out.println("BEST PUNCH: " + duksters.getBestPunch() + "\n\n");
 	     }
         }
-        
-//        System.out.println("weighing in at " + competitor.getWeight() + " with his best punch being the " + competitor.getBestPunch() + "... " + competitor.getName() + "!!!");  
 
 }
