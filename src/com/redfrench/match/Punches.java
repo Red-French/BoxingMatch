@@ -1,35 +1,31 @@
 package com.redfrench.match;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.redfrench.referee.Round;
+import com.redfrench.main.Player_setup;
 
 public class Punches {
 	
-	Round round = new Round();
+	Randomizer randomizer = new Randomizer();
+	Player_setup player = new Player_setup();
 	
-	Timer timer;
 	int body = -1;
 	int jab = -2;
 	int hook = -3;
+	float combination = -3.5f;
 	int low_blow = -4;
 	int uppercut = -5;
 	int bestPunch = -7;  // TODO: determine if a fighter threw his best punch
 	
+	int punches[] = new int[7];
+	
 	public void throwPunches() throws InterruptedException {
-		timer = new Timer();
-		timer.schedule(new EndOfRound(), 5000);
-		for(int i = 0; i < 50000; i++) {
+		
+		for(int i = 0; i < 5; i++) {
+			int boxer = randomizer.boxer();
+			String activeBoxer = player.getDuksters().get(boxer).getName();
+			
+			System.out.println(activeBoxer + " throws a punch!");
 			Thread.sleep(1000);
-			System.out.println(i + " punch, punch, jab, jab");
 		}
 	}
 	
-	class EndOfRound extends TimerTask {
-        public void run() {
-        timer.cancel();
-        round.endOfRound();
-        }    
-    }
 }
