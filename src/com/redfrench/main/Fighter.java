@@ -27,7 +27,7 @@ public class Fighter {
 		return weight;
 	}
 	public String getBestPunch() {
-		return bestPunch;
+		return Fighter.bestPunch;
 	}
 	public int getEnergy() {
 		return energy;
