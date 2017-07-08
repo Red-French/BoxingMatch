@@ -20,7 +20,7 @@ public class Punches {
 	public void throwPunches() throws InterruptedException {
 		
 		for(int i = 0; i < 5; i++) {
-			int boxer = randomizer.boxer();
+			int boxer = randomizer.randomNum(2);
 			String activeBoxer = player.getDuksters().get(boxer).getName();
 			
 			System.out.println(activeBoxer + " throws a punch!");
