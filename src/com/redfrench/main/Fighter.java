@@ -4,7 +4,7 @@ public class Fighter {
 
 	private String name; 
 	private int weight;
-	private static String bestPunch;
+	private String bestPunch;
 	private static int energy = 100;
 	
 	public Fighter(String name, int weight, String bestPunch) {
@@ -15,7 +15,7 @@ public class Fighter {
 		super();
 		this.name = name;
 		this.weight = weight;
-		Fighter.bestPunch = bestPunch;
+		this.bestPunch = bestPunch;
 		Fighter.energy = energy;
 	}
 	
@@ -27,7 +27,7 @@ public class Fighter {
 		return weight;
 	}
 	public String getBestPunch() {
-		return Fighter.bestPunch;
+		return bestPunch;
 	}
 	public int getEnergy() {
 		return energy;
