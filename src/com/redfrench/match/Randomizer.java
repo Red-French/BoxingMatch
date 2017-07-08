@@ -4,15 +4,10 @@ import java.util.Random;
 
 public class Randomizer {
 	Random randomGenerator = new Random();
-	
-	public int boxer() {
+
+	public int randomNum(int num) {
 		int randomInt;
-		return randomInt = randomGenerator.nextInt(2);
-	}
-	
-	public int punch() {
-		int randomInt;
-		return randomInt = randomGenerator.nextInt(6);
+		return randomInt = randomGenerator.nextInt(num);
 	}
 	
 }
