@@ -5,18 +5,18 @@ public class Fighter {
 	private String name; 
 	private int weight;
 	private String bestPunch;
-	private static int energy = 100;
+	private float energy;
 	
 	public Fighter(String name, int weight, String bestPunch) {
-		this(energy, name, weight, bestPunch);  // send default energy with parameters
+		this(100, name, weight, bestPunch);  // send default energy with parameters
 	}
 	
-	public Fighter(int energy, String name, int weight, String bestPunch) {
+	public Fighter(float energy2, String name, int weight, String bestPunch) {
 		super();
 		this.name = name;
 		this.weight = weight;
 		this.bestPunch = bestPunch;
-		Fighter.energy = energy;
+		this.energy = energy2;
 	}
 	
 	
@@ -29,13 +29,13 @@ public class Fighter {
 	public String getBestPunch() {
 		return bestPunch;
 	}
-	public int getEnergy() {
+	public float getEnergy() {
 		return energy;
 	}
 
-	public int setEnergy(int hit) {
-		Fighter.energy = energy - hit;
-		return Fighter.energy;
+	public float setEnergy(float punchPower) {
+		energy = energy - punchPower;
+		return energy;
 	}
 
 }
