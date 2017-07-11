@@ -1,3 +1,3 @@
-# BoxingMatch
+# HeadKnocker
 
-This is a simple command-line app to practice/learn Java.
+This is a simple boxing command-line app to practice/learn Java.
