@@ -1,11 +1,11 @@
 package com.redfrench.referee;
 
 import com.redfrench.main.Player_setup;
-import com.redfrench.match.Punches;
+import com.redfrench.match.ThrowPunches;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Round extends Punches {
+public class Round extends ThrowPunches {
     
     Player_setup player = new Player_setup();
     
