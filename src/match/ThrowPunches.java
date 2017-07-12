@@ -7,7 +7,7 @@ import com.redfrench.match.Punch;
 
 import main.Player_setup;
 
-public class Punches {
+public class ThrowPunches {
 	
 	Randomizer randomizer = new Randomizer();
 	private static Player_setup player = new Player_setup();
