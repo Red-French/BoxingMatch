@@ -1,71 +1,98 @@
 package referee;
 
+import fighter.Fighter;
 import main.Player_setup;
-import match.Randomizer;
+import main.Values;
+import match.KnockoutStatus;
 
 public class Announcer {
+	
+	private Player_setup player = new Player_setup();
+	private KnockoutStatus knockoutStatus = new KnockoutStatus();
 
-	private static Player_setup player = new Player_setup();
-	private Randomizer randomizer = new Randomizer();
 	
-	
-	public void commentator(String activeBoxer, String boxersBestPunch, String thisPunch, int strengthOfPunch) {
-	
-		float player1Energy = player.getDuksters().get(0).getEnergy();
-		float player2Energy = player.getDuksters().get(1).getEnergy();
+	public void fightIntro() throws InterruptedException {
 		
-		if(thisPunch.equals(boxersBestPunch)) {
-			System.out.println(activeBoxer + " throws " + boxersBestPunch + "! HIS BEST PUNCH!!!");
-			System.out.println("                                          " + player.getDuksters().get(0).getName() + "'s ENERGY: " + player1Energy);
-	    	System.out.println("                                          " + player.getDuksters().get(1).getName() + "'s ENERGY: " + player2Energy);
+		String callToAttention = "\nLLLLLET'S GET READY TO RUMMMMBUUUUULLE!!!";
+		for (char c : callToAttention.toCharArray()) {
+			System.out.print(c);
+			Thread.sleep(50);
+		}
+		
+		Thread.sleep(2000);
+		System.out.println("\nGet ready for " + (int)Values.numRoundsToFight + " rounds of boxing bliss!");
+
+		
+		for(Fighter duksters : player.getDuksters()) {
+			Thread.sleep(3000);
+			String intro = "\n\nWeighing in at " + duksters.getWeight()  + " with his best punch being the " + duksters.getBestPunch() + "... " + duksters.getName() + "!\n";
+			
+			for (char c : intro.toCharArray()) {
+			    System.out.print(c);
+			    Thread.sleep(100);
+			}
+			// TODO: make boxer name blink (below should work in console (not Eclipse)
+//			int nameLength = duksters.getName().length();
+//			for (nameLength++; nameLength > 0; nameLength--) {
+//				System.out.print("\b");
+//				System.out.print("                          ");
+//				Thread.sleep(1000);
+//				System.out.print(duksters.getName() + "!");
+//			}
+		}
+		
+		Thread.sleep(1750);
+		System.out.println("\n~ TONIGHT'S FIGHT TICKET ~\n");
+		for(Fighter duksters : player.getDuksters()) {
+			Thread.sleep(1500);
+			System.out.println("FIGHTER: " + duksters.getName());
+			Thread.sleep(1000);
+			System.out.println("WEIGHT: " + duksters.getWeight());
+			Thread.sleep(1000);
+			System.out.println("BEST PUNCH: " + duksters.getBestPunch() + "\n\n");
+		}
+	}
+
+	public void theDecision(String wonMostRounds) throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("\nWe're going to a decision");
+		
+		Thread.sleep(3000);
+		System.out.print("\nThe judges score the fight as " + player.getDuksters().get(0).getNumberOfRoundsWon());
+		if(player.getDuksters().get(0).getNumberOfRoundsWon() == 1) {
+			System.out.print(" round to ");
 		} else {
-			switch( strengthOfPunch ) {
-		     case 0:
-		    	 System.out.println(activeBoxer + " throws a strong " + thisPunch + "!");
-		    	 System.out.println("                                          " + player.getDuksters().get(0).getName() + "'s ENERGY: " + player1Energy);
-		    	 System.out.println("                                          " + player.getDuksters().get(1).getName() + "'s ENERGY: " + player2Energy);
-		         break;
-		     case 1:
-		    	 System.out.println(activeBoxer + " throws a good " + thisPunch + "!");
-		    	 System.out.println("                                          " + player.getDuksters().get(0).getName() + "'s ENERGY: " + player1Energy);
-			     System.out.println("                                          " + player.getDuksters().get(1).getName() + "'s ENERGY: " + player2Energy);
-		         break;
-		     case 2:
-		    	 System.out.println(activeBoxer + " throws a weak " + thisPunch + "!");
-		    	 System.out.println("                                          " + player.getDuksters().get(0).getName() + "'s ENERGY: " + player1Energy);
-			     System.out.println("                                          " + player.getDuksters().get(1).getName() + "'s ENERGY: " + player2Energy);
-		    	 break;
-		     case 3:
-		    	 System.out.println(activeBoxer + " MISSES the " + thisPunch + "!");
-		    	 System.out.println("                                          " + player.getDuksters().get(0).getName() + "'s ENERGY: " + player1Energy);
-			     System.out.println("                                          " + player.getDuksters().get(1).getName() + "'s ENERGY: " + player2Energy);
-			};
+			System.out.print(" rounds to ");
+		}
+		System.out.println(player.getDuksters().get(1).getNumberOfRoundsWon());
+		
+		Thread.sleep(2000);
+		System.out.print("The WINNER...");
+		
+		for(int i=0; i<4; i++) {
+			Thread.sleep(1000);
+			System.out.print(".");
+		}
+
+		if(wonMostRounds == "boxer1") {
+			System.out.print(" " + player.getBoxerName(0) + "!!!");
+		} else if(wonMostRounds == "boxer2") {
+			System.out.print(" " + player.getBoxerName(1) + "!!!");
+		} else {
+			System.out.print(" It's a draw!!!");
 		}
 	}
 	
-	public void commentatorTrashTalk(int indexOfLosingBoxer) throws InterruptedException {
-		int announcerJabber = randomizer.randomNum(6);
-		Thread.sleep(4000);
-		System.out.print("ANNOUNCER: ");
-		switch(announcerJabber) {
-	    	case 0:
-	     		System.out.println(player.getDuksters().get(indexOfLosingBoxer).getName() + " stumbles to the corner!");       
-	     		break;
-	     	case 1:
-	     		System.out.println("Does " + player.getDuksters().get(indexOfLosingBoxer).getName() + " even know where he is right now?");
-	     		break;
-	     	case 2:
-	     		System.out.println(player.getDuksters().get(indexOfLosingBoxer).getName() + " is gonna need the oxygen after that round.");
-	     		break;
-	     	case 3:
-	     		System.out.println(player.getDuksters().get(indexOfLosingBoxer).getName() + " is a real embarrassment to men everywhere.");
-	     		break;
-	     	case 4:
-	     		System.out.println(player.getDuksters().get(indexOfLosingBoxer).getName() + " should've wore a skirt tonight.  P-a-t-h-e-t-i-c");
-	     		break;
-	     	case 5:
-	     		System.out.println("Did " + player.getDuksters().get(indexOfLosingBoxer).getName() + " think he was gonna fight a girl tonight?  I mean, did he train?");
-	     		break;
-		};
+	public void knockout() throws InterruptedException, InstantiationException, IllegalAccessException {
+		Thread.sleep(2000);
+		System.out.print("\n\nLadies and gentlemen, the WINNER, by way of knockout"); 
+		
+		for(int i=0; i<4; i++) {
+			Thread.sleep(1000);
+			System.out.print(".");
+		}
+		
+		System.out.print(knockoutStatus.getWinningBoxer() + "!!!");
 	}
+	
 }
