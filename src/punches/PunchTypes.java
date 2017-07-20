@@ -1,6 +1,6 @@
 // a singleton; used to get energy value which is subtracted from punched boxer
 
-package match;
+package punches;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class PunchTypes {
 	
 	private static List<Punch> thepunch;
 
-	static {
+	static {  // punchTypes with knockout power (for punch scoring amounts, see Score class)
 		List<Punch> boxerPunch = new ArrayList<>();
 		boxerPunch.add(new Punch("body blow", 1));
 		boxerPunch.add(new Punch("jab", 2));
