@@ -1,19 +1,20 @@
 package main;
 
-import referee.Round;
+import match.Round;
+import referee.Announcer;
 
 public class Main {
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws InterruptedException, InstantiationException, IllegalAccessException {
 	  
 	Player_setup setup = new Player_setup();
+    Announcer announcer = new Announcer();
     Round round = new Round();
-
-    System.out.println("\nLET'S GET READY TO RUMMMMBUUUUULLE!");
-
+    
+    
     setup.questions();
-    setup.announcer();
-    round.newRound();
+    announcer.fightIntro();
+    round.beginFight();
 
   //  String[] fighters = {name, punch};
 
