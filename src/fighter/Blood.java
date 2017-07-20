@@ -1,4 +1,4 @@
-package match;
+package fighter;
 
 public class Blood {
 	// boolean bleeding

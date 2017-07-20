@@ -1,4 +1,4 @@
-package match;
+package fighter;
 
 public class Mouth {
 	// boolean mouthpiece (looses it?)
