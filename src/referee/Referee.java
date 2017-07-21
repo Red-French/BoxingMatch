@@ -38,4 +38,8 @@ public class Referee {
 		announcer.knockout();
 	}
 	
+	public void lowBlowWarning(String activeBoxersName) {
+		System.out.println("REFEREE:  Get those punches up " + activeBoxersName + "!\n");
+	}
+	
 }
