@@ -31,7 +31,7 @@ public class Score {
 		JAB(-0.20f),
 		HOOK(-0.20f),
 		COMBINATION(-0.5f),
-		LOW_BLOW(-0.20f),  // TODO: ref gives warning with this
+		LOW_BLOW(-0.20f),
 		UPPERCUT(-0.20f),
 		BEST_PUNCH(-0.20f);
 
