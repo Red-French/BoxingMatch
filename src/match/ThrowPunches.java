@@ -5,6 +5,7 @@ import main.Values;
 import punches.PunchTypes;
 import punches.Score;
 import referee.Commentator;
+import referee.Referee;
 import match.KnockoutStatus;
 
 
@@ -14,6 +15,7 @@ public class ThrowPunches {
 	private Randomizer randomizer = new Randomizer();
 	private PunchTypes punchTypes = new PunchTypes();
 	private Commentator commentator = new Commentator();
+	private Referee referee = new Referee();
 	private TrashTalk trashTalk = new TrashTalk();
 	private Score score = new Score();
 	private KnockoutStatus knockoutStatus = new KnockoutStatus();
@@ -82,6 +84,10 @@ public class ThrowPunches {
 			Thread.sleep(timeBetweenPunches);
 			
 			commentator.duringRound(activeBoxersName, boxersBestPunch, thisPunch, strengthOfPunch);
+
+			if(thisPunch.equals("low blow")) {
+				referee.lowBlowWarning(activeBoxersName);
+			}
 			
 			// if a boxer's energy is below knockoutLevel, end fight
 			if(( player.getDuksters().get(0).getEnergy() < Values.knockoutLevel) || (player.getDuksters().get(1).getEnergy() < Values.knockoutLevel)) {
