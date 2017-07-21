@@ -1,4 +1,4 @@
-# HeadKnocker
+![Image of headknocker logo](http://redfrench.net/img/headknockerlogo.png)
 
 This is a command-line boxing game to demonstrate an understanding of OOP concepts, principles, and techniques.
 
