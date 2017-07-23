@@ -90,7 +90,7 @@ public class ThrowPunches extends ActionsService {
 			// if boxerPunched has taken many punches
 			numTimesHit = player.getDuksters().get(theBoxerPunched).getTimesHit();
 			if(numTimesHit >= Values.numHitsTilBoxerIsHurt) {
-				if(randomizer.randomNum(50)%2 == 0) {
+				if(randomizer.randomNum(50)%3 == 0) {
 					performAction(theBoxerPunched);
 				}
 			}
