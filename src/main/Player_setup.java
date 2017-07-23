@@ -96,13 +96,12 @@ public class Player_setup {
 	          scanner.next();  // non-integer; consume it and continue
 	      }
 	    while(Values.numRoundsToFight < 1 || Values.numRoundsToFight > 10) {
-	    	System.out.print("\nHow many rounds? (1-10): ");
 	    	Values.numRoundsToFight = scanner.nextInt();
 	    }
 	    
 	    
 	    Values.calcKnockoutLevel();
-	    System.out.println("The knockout level is " + Values.knockoutLevel);
+	    System.out.println("\nThe knockout level is >>>>>>> " + Values.knockoutLevel + " <<<<<<<");
 	}
 	
 	
