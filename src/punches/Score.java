@@ -5,21 +5,13 @@ import main.Player_setup;
 // TODO: use a 'volatile' variable (if I decide to use multiple threads)
 	
 	// down with count
-	// knockout
 	// break
-	// warns of low punch (triggered from Punches class)
 	// minus point for least aggressive
 
-
-//10-point scale. 
-// Most rounds will end 10-9, with the more dominant boxer receiving 10 points, the other receiving 9.
+// POSSIBLE FUTURE SCORING ADDITIONS:
+//10-point scale
 //If a boxer is knocked down, he loses a point. If a boxer is knocked down twice, he loses two points. 
 //When the referee sees fit, he can take away a point or two for an intentional foul; LOW-BLOW
-
-//Unanimous Decision – All three judges had the same fighter scoring more points.
-//Split Decision – Two of the three judges had the same fighter scoring more points (the winner), while the other judge had the other boxer scoring more points (the loser).
-//Majority Decision – Two of the three judges had the same fighter scoring more points (the winner), while the other judge ruled the contest a draw.
-//Draw – A draw can occur when either two of the judges rule the contest a draw, or it can happen when one judge scores the bout for one fighter, another judge scores it for the other fighter, and the third rules it a draw.
 
 public class Score {
 	
