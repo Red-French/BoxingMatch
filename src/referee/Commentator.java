@@ -49,24 +49,24 @@ public class Commentator {
 		
 		
 		if(thisPunch.equals(boxersBestPunch) && (strengthOfPunch != 3)) {  // if boxer landed his best punch
-			System.out.println("\n"+ activeBoxersName + " throws " + boxersBestPunch + "! HIS BEST PUNCH!!!");
+			System.out.println(activeBoxersName + " throws " + boxersBestPunch + "! HIS BEST PUNCH!!!");
 			System.out.println(energyLevelVisual + player.getDuksters().get(theBoxerPunched).getName() + ":" + punchedBoxersEnergy);
 		} else {
 			switch( strengthOfPunch ) {
 		     case 0:
-		    	 System.out.println("\n"+ activeBoxersName + " throws a strong " + thisPunch + "!");
+		    	 System.out.println(activeBoxersName + " throws a strong " + thisPunch + "!");
 		    	 System.out.println(energyLevelVisual + player.getDuksters().get(theBoxerPunched).getName() + ":" + punchedBoxersEnergy);
 		         break;
 		     case 1:
-		    	 System.out.println("\n"+ activeBoxersName + " throws a good " + thisPunch + "!");
+		    	 System.out.println(activeBoxersName + " throws a good " + thisPunch + "!");
 		    	 System.out.println(energyLevelVisual + player.getDuksters().get(theBoxerPunched).getName() + ":" + punchedBoxersEnergy);
 		         break;
 		     case 2:
-		    	 System.out.println("\n"+ activeBoxersName + " throws a weak " + thisPunch + "!");
+		    	 System.out.println(activeBoxersName + " throws a weak " + thisPunch + "!");
 		    	 System.out.println(energyLevelVisual + player.getDuksters().get(theBoxerPunched).getName() + ":" + punchedBoxersEnergy);
 		    	 break;
 		     case 3:
-		    	 System.out.println("\n"+ activeBoxersName + " MISSES the " + thisPunch + "!");
+		    	 System.out.println(activeBoxersName + " MISSES the " + thisPunch + "!");
 		    	 System.out.println(energyLevelVisual + player.getDuksters().get(theBoxerPunching).getName() + ":" + punchingBoxersEnergy);
 			};
 		}
