@@ -8,6 +8,7 @@ public class Referee {
 	Player_setup player = new Player_setup();
 	Announcer announcer = new Announcer();
 	KnockoutStatus knockoutStatus = new KnockoutStatus();
+	Commentator commentator = new Commentator();
 	
 
 	public void knockout() throws InstantiationException, IllegalAccessException, InterruptedException {
@@ -27,7 +28,8 @@ public class Referee {
 		}
 			
 		Thread.sleep(1000);
-		System.out.println("\n" + knockedOutBoxersName.toUpperCase() + " GOES DOWN!!");
+		commentator.knockDown(knockedOutBoxersName);
+
 		Thread.sleep(750);
 		System.out.println("\nREFEREE: ");
 		for(int i=10; i>0; i--) {
@@ -40,6 +42,10 @@ public class Referee {
 	
 	public void lowBlowWarning(String activeBoxersName) {
 		System.out.println("REFEREE:  Get those punches up " + activeBoxersName + "!\n");
+	}
+	
+	public void comeOutFighting() {
+		System.out.println("\nWhen the bell rings, come out fighting! \n");
 	}
 	
 }
