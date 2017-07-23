@@ -24,5 +24,3 @@ public class Main {
   }
 
 }
-
-// TODO: separate thread for crowd
