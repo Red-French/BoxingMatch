@@ -4,6 +4,7 @@ import main.Player_setup;
 import main.Values;
 import punches.Score;
 import referee.Commentator;
+import referee.Referee;
 import match.EndFight;
 import match.KnockoutStatus;
 
@@ -14,6 +15,7 @@ import java.util.TimerTask;
 public class Round extends ThrowPunches {
     
     private Player_setup player = new Player_setup();
+    private Referee referee = new Referee();
     private Commentator commentator = new Commentator();
     private Score score = new Score();
     private EndFight endFight = new EndFight();
@@ -25,7 +27,7 @@ public class Round extends ThrowPunches {
  
     public void beginFight() throws InterruptedException {
     	Thread.sleep(2000);
-    	System.out.println("When the bell rings, come out fighting! \n");
+    	referee.comeOutFighting();
     	timer = new Timer();
     	timer.schedule(new BeginRound(), 2000);
     }
@@ -36,10 +38,7 @@ public class Round extends ThrowPunches {
     	score.roundWon();  // overall count of rounds won
     	
     	Thread.sleep(4000);
-    	
-    	System.out.println("\nEND OF ROUND " + round + " BOXER REPORT\n");
-    	System.out.println(player.getBoxerName(0) + "'s ENERGY:  " + player.getDuksters().get(0).getEnergy() + " - Round " + round + " score: " + player.getDuksters().get(0).getScore());
-    	System.out.println(player.getBoxerName(1) + "'s ENERGY:  " + player.getDuksters().get(1).getEnergy() + " - Round " + round + " score: " + player.getDuksters().get(1).getScore());
+    	commentator.postRoundReport(round);
     	
     	if (this.round < Values.numRoundsToFight) {
     		int indexOfLosingBoxer;
@@ -54,11 +53,6 @@ public class Round extends ThrowPunches {
     		float energyDifference = player.getDuksters().get(0).getEnergy() - player.getDuksters().get(1).getEnergy();
     		if(Math.abs(energyDifference) > 9) {
     			commentator.afterRound(indexOfLosingBoxer);
-    			
-        		// add energy to losing boxer
-        		player.getDuksters().get(indexOfLosingBoxer).setEnergy(-5);
-        		Thread.sleep(2250);
-        		System.out.println(player.getDuksters().get(indexOfLosingBoxer).getName() + " gets smelling salts in the corner and gains some energy! \n");
     		}
     		
     		score.resetRoundsScore();  // reset round's score for next round
