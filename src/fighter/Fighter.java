@@ -34,7 +34,7 @@ public class Fighter {
 		attributes.add("left ear");
 		attributes.add("nose");
 		attributes.add("lip");
-		attributes.add("tooth");
+		attributes.add("jaw");
 		this.fighterAttributes = attributes;
 	}
 	
